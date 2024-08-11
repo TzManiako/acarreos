@@ -1,0 +1,604 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --background-color-btn: #007bff;
+    --color-nav: #ff0000;
+    --type-font: font-family: "Poppins", sans-serif;
+}  
+
+html {
+    font-size: 60.5%;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: f0f0f0;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 20px auto;
+}
+
+
+.navbar {
+    display: flex;
+    padding-right: 100px;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    gap: 4rem;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: #000;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.menu a::after {
+    content:'';
+    width: 2rem;
+    height: 1px;
+    background-color: var(--color-nav);
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translate(-90%, 90%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover::after {
+    opacity: 1;
+}
+
+/* MAIN */
+
+.hero-main {
+    background-image: url('./img/mudanza.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    animation: slideUp 1s ease-out;
+}
+
+.hero-content__title{
+    font-size: 5rem;
+}
+
+.hero-content__title-modif{
+    font-size: 3rem;
+}
+
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1.5px solid white;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.blue {
+    background-color: var(--background-color-btn);
+    color: white;
+}
+
+.transparent {
+    background-color: transparent;
+    color: white;
+}
+
+.btn:hover {
+    background-color: white;
+    color: var(--background-color-btn);
+}
+
+.blue:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.transparent:hover {
+    background-color: var(--background-color-btn);
+    color: white;
+}
+
+/* SECTION NOSOTROS */
+.about-us {
+    padding: 5rem 0;
+    text-align: left;
+    background-color: #f9f9f9;
+}
+
+.about-us h2 {
+    font-size: 3rem;
+    text-align: center;
+    /* margin-bottom: 2rem; */
+    font-weight: bold;
+    padding-bottom: 40px;
+    color: #000;
+}
+
+.about-us-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-us .text {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.about-us .text p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #000;
+    margin-bottom: 2rem;
+}
+
+.about-us .text .btn-outline {
+    text-decoration: none;
+    border: 1px solid #007bff;
+    padding: 10px 20px;
+    color: #007bff;
+    transition: all 0.3s ease;
+    font-size: 1.4rem;
+}
+
+.about-us .text .btn-outline:hover {
+    background-color: var(--background-color-btn);
+    color: #fff;
+}
+
+.about-us .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us .image img {
+    max-width: 100%;
+    box-shadow: 0px 1px 15px #0000002c;
+}
+
+/* TRABAJO */
+
+.our-work {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.our-work h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.our-work h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #000;
+    margin: 10px auto;
+}
+
+.work-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.work-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    transition: transform 0.3s ease-in-out; /* Agregado */
+}
+
+.work-card:hover {
+    transform: scale(1.05); /* Agregado */
+}
+
+.work-card img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out; /* Agregado */
+}
+
+.work-card img:hover {
+    transform: scale(1.1); /* Agregado */
+}
+
+.work-card h3 {
+    font-size: 1.7rem;
+    margin: 15px 0;
+}
+
+.work-card p {
+    font-size: 1.5rem;
+    color: #000;
+    line-height: 1.5;
+    text-align: start;
+}
+
+
+@media only screen and (max-width: 767px) {
+    /* Ajustes generales para dispositivos móviles */
+    html {
+        font-size: 56.25%; /* Reduce un poco el tamaño de la fuente base */
+    }
+
+    .hero {
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+
+    .container-logo img {
+        width: 160px; /* Ajustar el tamaño del logo */
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .menu li {
+        margin-bottom: 1rem;
+    }
+
+    .hero-content__title {
+        font-size: 3rem; /* Ajuste para títulos grandes en dispositivos móviles */
+    }
+
+    .hero-content__title-modif {
+        font-size: 2.5rem; /* Ajuste para subtítulos */
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn {
+        padding: 12px 18px;
+        font-size: 14px;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        width: 200px;
+    }
+
+    /* Sección "Nosotros" */
+    .about-us-content {
+        flex-direction: column;
+    }
+
+    .about-us .text {
+        padding-right: 0;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+
+    .about-us .image img {
+        width: 100%;
+    }
+
+    /* Sección "Nuestro Trabajo" */
+    .work-cards {
+        flex-direction: column;
+    }
+
+    .work-card {
+        width: 100%;
+    }
+}
+
+/* NOSOTROS PAG */
+
+/* Estilo general para la sección "Nosotros" */
+#nosotros {
+    padding: 40px 20px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+.nosotros__title {
+    font-size: 3rem;
+    padding-bottom: 20px;
+    font-family: var(--type-font);
+    border-bottom: 3px solid #333; /* Línea debajo del título */
+    display: inline-block; /* Asegura que el borde se aplique correctamente */
+    margin-bottom: 20px; /* Espacio entre el borde y el contenido debajo */
+}
+
+.container-nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-description {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    opacity: 0; /* Comienza invisible para la animación */
+    transform: translateY(30px); /* Comienza desplazado hacia abajo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición para la animación */
+    margin: 0 20px; /* Añadir margen para separar las imágenes */
+}
+
+.image-description img {
+    width: 60%;
+    height: auto;
+    margin-right: 20px;
+}
+
+.image-description p {
+    font-size: 1.5rem;
+    line-height: 1.9;
+}
+
+.image-left {
+    flex-direction: row;
+    padding-left: 20px; /* Alinear imagen a la izquierda */
+}
+
+.image-right {
+    flex-direction: row-reverse;
+    padding-right: 20px; /* Alinear imagen a la derecha */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-description {
+    animation: fadeInUp 0.6s forwards;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #333;
+    color: #fff;
+    margin-top: 60px;
+    padding: 20px 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo img{
+    width: 200px;
+}
+
+.footer-description {
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+.footer-contact {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: background-color 0.3s;
+}
+
+.social-icon img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.social-icon:hover {
+    background-color: #ffffff;
+}
+
+/* MEDIA DE NOSOTROS PAG */
+
+/* Estilo general para la sección "Nosotros" */
+#nosotros {
+    padding: 40px 20px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+.nosotros__title {
+    font-size: 3rem;
+    padding-bottom: 20px;
+    font-family: var(--type-font);
+    text-align: center;
+}
+
+.container-nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-description {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    opacity: 0; /* Comienza invisible para la animación */
+    transform: translateY(30px); /* Comienza desplazado hacia abajo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transición para la animación */
+    margin: 0 20px; /* Añadir margen para separar las imágenes */
+}
+
+.image-description img {
+    width: 60%;
+    height: auto;
+    margin-right: 20px;
+}
+
+.image-description p {
+    font-size: 1.5rem;
+    line-height: 1.9;
+}
+
+.image-left {
+    flex-direction: row;
+}
+
+.image-right {
+    flex-direction: row-reverse;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-description {
+    animation: fadeInUp 0.6s forwards;
+}
+
+/* Media Queries para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+    .nosotros__title {
+        font-size: 2.5rem;
+    }
+
+    .image-description {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .image-description img {
+        width: 100%;
+        margin: 0 0 10px 0; /* Ajusta el margen para la vista en columnas */
+    }
+
+    .image-description p {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nosotros__title {
+        font-size: 2rem;
+        padding-bottom: 15px;
+    }
+
+    .image-description {
+        padding: 0 10px; /* Ajusta el padding para pantallas más pequeñas */
+    }
+
+    .image-description img {
+        width: 100%;
+    }
+
+    .image-description p {
+        font-size: 1.5rem;
+    }
+}
+
+/* SERVIVIOS */
+
+
+
+
+
+    
+
+

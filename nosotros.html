@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container-navbar">
+            <nav class="navbar container">
+                <ul class="menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="#">Horarios</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="nosotros">
+            <div class="container-nosotros">
+                <h2 class="nosotros__title">NOSOTROS</h2>
+                <div class="image-description image-left nosotros-p">
+                    <img src="./img/nosotrospag.jpg" alt="Descripción 1">
+                    <p>Somos Acarreo y Traslado, tu aliado confiable en mudanzas y transportes. Con años de
+                        experiencia en la industria, ofrecemos servicios de acarreo y trasteo de alta calidad,
+                        adaptándonos a las necesidades de cada cliente. Contamos con un equipo de profesionales
+                        altamente capacitados y una flota de vehículos modernos para garantizar la seguridad y
+                        eficiencia de tus pertenencias.</p>
+                </div>
+                <div class="image-description image-right nosotros-p">
+                    <img src="./img/nosotrospag3.jpg" alt="Descripción 2">
+                    <p>Nuestro compromiso es brindarte un servicio personalizado y transparente, desde la cotización hasta la entrega final. Trabajamos con cuidado y dedicación para que tu mudanza sea una experiencia tranquila y sin contratiempos.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const elements = document.querySelectorAll('.image-description');
+
+            const checkPosition = () => {
+                elements.forEach(element => {
+                    const position = element.getBoundingClientRect();
+                    if (position.top < window.innerHeight && position.bottom >= 0) {
+                        element.style.opacity = 1;
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', checkPosition);
+            checkPosition(); // Verifica la posición al cargar la página
+        });
+    </script>
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="footer-logo"><img src="./img/logo.png" alt=""></a>
+                <p class="footer-description">Acarreos de tu confianza.</p>
+            </div>
+
+            <div class="footer-contact">
+                <p>Email: contacto@tuempresa.com</p>
+                <p>Teléfono: xxx-xxx-xxx</p>
+            </div>
+
+            <div class="footer-social">
+                <a href="#" class="social-icon">
+                    <img src="./img/facebook.png" alt="Facebook">
+                </a>
+                <a href="#" class="social-icon">
+                    <img src="./img/twitter.png" alt="Twitter">
+                </a>
+                <a href="#" class="social-icon">
+                    <img src="./img/instagram-logo.png" alt="Instagram">
+                </a>
+                <a href="#" class="social-icon">
+                    <img src="./img/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
