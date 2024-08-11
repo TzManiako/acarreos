@@ -4,6 +4,9 @@
     --background-color-btn: #007bff;
     --color-nav: #ff0000;
     --type-font: font-family: "Poppins", sans-serif;
+    --color-1: #0f1016;
+    --text-color: #f0f0f0;
+    --accent-color: #006aff68;
 }  
 
 html {
@@ -24,48 +27,99 @@ html {
     margin: 20px auto;
 }
 
-
-.navbar {
-    display: flex;
-    padding-right: 100px;
-    justify-content: center;
+nav {
+  height: 70px;
+  background-color: var(--color-1);
+  display: flex;
+  justify-content: center; /* Cambiado de flex-end a center */
+  align-items: center;
 }
 
-.menu {
-    display: flex;
-    gap: 4rem;
+.links-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; /* Asegura que los elementos estén centrados */
 }
 
-.menu li {
-    list-style: none;
+nav a {
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--text-color);
 }
 
-.menu a {
-    text-decoration: none;
-    font-size: 1.8rem;
-    color: #000;
-    font-family: "Poppins", sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    position: relative;
+nav a:hover {
+  background-color: var(--accent-color);
 }
 
-.menu a::after {
-    content:'';
-    width: 2rem;
-    height: 1px;
-    background-color: var(--color-nav);
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translate(-90%, 90%);
-    opacity: 0;
-    transition: all 0.3s ease;
+nav .home-link {
+  margin-right: auto;
 }
 
-.menu a:hover::after {
-    opacity: 1;
+nav svg {
+  fill: var(--text-color);
 }
+
+#sidebar-active {
+  display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button {
+  display: none;
+}
+
+@media(max-width: 450px) {
+  nav {
+    justify-content: space-between; /* Ajusta la justificación del contenido */
+  }
+
+  .links-container {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    width: 300px;
+    background-color: var(--color-1);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: 0.75s ease-out;
+  }
+
+  nav a {
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    padding: 20px 30px;
+    justify-content: flex-start;
+  }
+
+  .open-sidebar-button, .close-sidebar-button {
+    padding: 20px;
+    display: block;
+  }
+
+  #sidebar-active:checked ~ .links-container {
+    right: 0;
+  }
+
+  #sidebar-active:checked ~ #overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+}
+
+
+
 
 /* MAIN */
 
@@ -73,7 +127,6 @@ html {
     background-image: url('./img/mudanza.jpg');
     background-size: cover;
     background-position: center;
-    margin-top: 20px;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -160,7 +213,7 @@ html {
     text-align: center;
     /* margin-bottom: 2rem; */
     font-weight: bold;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     color: #000;
 }
 
@@ -184,9 +237,9 @@ html {
 
 .about-us .text .btn-outline {
     text-decoration: none;
-    border: 1px solid #007bff;
+    border: 1px solid #007bffab;
     padding: 10px 20px;
-    color: #007bff;
+    color: #007bff96;
     transition: all 0.3s ease;
     font-size: 1.4rem;
 }
@@ -212,7 +265,7 @@ html {
 
 .our-work {
     background-color: #f4f4f4;
-    padding: 50px 0;
+    padding: 30px 0;
     text-align: center;
 }
 
@@ -318,6 +371,7 @@ html {
         display: block;
         text-align: center;
         width: 200px;
+        margin: 10px auto;
     }
 
     /* Sección "Nosotros" */
@@ -328,7 +382,8 @@ html {
     .about-us .text {
         padding-right: 0;
         padding-bottom: 20px;
-        text-align: center;
+        text-align: start;
+        padding: 20px;
     }
 
     .about-us .image img {
@@ -423,7 +478,7 @@ html {
 footer {
     background-color: #333;
     color: #fff;
-    margin-top: 60px;
+    margin-top: 160px;
     padding: 20px 20px;
 }
 
@@ -570,7 +625,7 @@ footer {
 
     .image-description p {
         font-size: 1.5rem;
-        text-align: center;
+        text-align: start;
     }
 }
 
@@ -589,13 +644,17 @@ footer {
     }
 
     .image-description p {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 }
 
 /* SERVIVIOS */
 
-
+.pt-title{
+    text-align: center;
+    font-size: 5rem;
+    margin: 100px auto;
+}
 
 
 
